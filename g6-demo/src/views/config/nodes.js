@@ -47,7 +47,7 @@ const nodes = [{
   label: '开始',
   anchorPoints: anchorPoints,
   nodeLevel: -1,
-  style: disableElement
+  style: disableElement,
 
 }, {
   id: 'node1', // String，该节点存在则必须，节点的唯一标识

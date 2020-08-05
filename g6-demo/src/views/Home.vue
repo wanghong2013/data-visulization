@@ -20,6 +20,7 @@ export default {
     }
   },
   mounted() {
+
       this.__initCharts()
   },
   methods:{
@@ -30,6 +31,7 @@ export default {
         width: 800,
         height: 800,
         renderer: "svg",
+
         modes: {
           default: ["drag-canvas", "zoom-canvas"]
         },
