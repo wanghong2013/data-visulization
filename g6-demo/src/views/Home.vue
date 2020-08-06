@@ -15,8 +15,8 @@ export default {
         data:{
           nodes,
           edges,
+        },
           prevNode:null
-        }
     }
   },
   mounted() {
@@ -26,6 +26,27 @@ export default {
   methods:{
     __initCharts() {
       const This = this;
+      G6.registerNode('dom-node', {
+  draw: (cfg, group,) => {
+    return group.addShape('dom', {
+      attrs: {
+        x: 0,
+        y: -30,
+        width: 100,
+        height: 60,
+         fill: 'red',
+    shadowBlur: 5,
+        // 传入 DOM 的 html
+        html: `<div class="node-wrapper" style="width:98px;height:58px;border: 1px solid #5B8FF9;font-size:12px">
+   <div>一级节点</div>
+          <div>节点名称:1xxxxx</div>
+          <div>未配置</div>
+</div>`
+      },
+      draggable: true
+    });
+  },
+}, 'single-node');
       const graph = new G6.Graph({
         container: "flow-node-list",
         width: 800,
